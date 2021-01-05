@@ -1,10 +1,11 @@
 import React from 'react'
-import NewsList from './Components/NewsList/NewsList'
+
 import './App.scss'
+import { NewsList } from './Components/NewsList/NewsList'
 
 export const App = () => {
   return<>
-  <NewsList />
+  <NewsList  />
     <h1>App</h1>
   </>
 }
