@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts, fetchUsers, fetchComments } from '../../Redux/Actions/action'
 
@@ -26,10 +26,33 @@ export const NewsList = () => {
         )
       }, [])
 
+      // const test = () => {
+      //   const a = selector.posts
+      //   const b = selector.users
+
+      //   const result = a.filter(v => {
+      //     return b.some(v2 => {
+      //         if (v.userId === v2.id) {
+      //           console.log(
+      //             v.title + v2.name
+      //           )
+      //         } 
+      //     })
+          
+      // })
+      // }
+
+
     return<>
-    {selector.posts.map(res => (
-      <h4>{res.name}</h4>
-    ))}
+    {/* <button onClick={() => test()}>test</button> */}
+      {selector.posts.filter(post => (
+        selector.users.some(user => {
+          if (post.userId === user.id) {
+            console.log(post)
+            console.log(user)
+          }
+        })
+      ))}
         <h1>NewsList</h1>
     </>
 }
