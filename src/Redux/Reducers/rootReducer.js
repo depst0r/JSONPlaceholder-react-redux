@@ -4,7 +4,11 @@ const initialState = {
     users: [],
     posts: [],
     comments: [],
-    post: []
+    post: [{
+        post: null,
+        user: null
+    }]
+    
 }
 
 export const rootReducer = (state = initialState, action) => {
