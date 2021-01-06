@@ -44,7 +44,7 @@ export const NewsList = () => {
 
 
     return<>
-    {/* <button onClick={() => test()}>test</button> */}
+    {/* <button onClick={() => test()}>test</button>
       {selector.posts.filter(post => (
         selector.users.some(user => {
           if (post.userId === user.id) {
@@ -52,7 +52,7 @@ export const NewsList = () => {
             console.log(user)
           }
         })
-      ))}
+      ))} */}
         <h1>NewsList</h1>
     </>
 }

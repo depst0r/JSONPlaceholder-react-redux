@@ -1,7 +1,10 @@
+import { COMBINE_POST } from '../Actions/actionType'
+
 const initialState = {
     users: [],
     posts: [],
-    comments: []
+    comments: [],
+    post: []
 }
 
 export const rootReducer = (state = initialState, action) => {
@@ -20,6 +23,11 @@ export const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 comments: action.data
+            }
+        case COMBINE_POST :
+            return {
+                ...state,
+                post: action.payload
             }
         default:
             return state

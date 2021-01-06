@@ -1,3 +1,5 @@
+import { COMBINE_POST } from './actionType'
+
 export const fetchPosts = () => {
     return dispatch => {
         fetch(`https://jsonplaceholder.typicode.com/posts/`)
@@ -21,3 +23,5 @@ export const fetchComments = () => {
         .then(res => dispatch({ type: 'getComments', data: res }))
     }
 }
+
+export const combimePost = arr => ({ type: COMBINE_POST, payload: arr })

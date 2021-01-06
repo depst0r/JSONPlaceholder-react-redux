@@ -1,0 +1,1 @@
+export const COMBINE_POST = 'COMBINE_POST'
