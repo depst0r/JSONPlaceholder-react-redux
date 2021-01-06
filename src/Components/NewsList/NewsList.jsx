@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts, fetchUsers, fetchComments } from '../../Redux/Actions/action'
 
@@ -6,10 +6,6 @@ export const NewsList = () => {
 
     const dispatch = useDispatch()
     const selector = useSelector(state => state.rootReducer)
-
-console.log('users', selector.users)
-console.log('posts', selector.posts)
-console.log('comments', selector.comments)
 
 
     useEffect(() => {
@@ -31,6 +27,9 @@ console.log('comments', selector.comments)
       }, [])
 
     return<>
+    {selector.posts.map(res => (
+      <h4>{res.name}</h4>
+    ))}
         <h1>NewsList</h1>
     </>
 }

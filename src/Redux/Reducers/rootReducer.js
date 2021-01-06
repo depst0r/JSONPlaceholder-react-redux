@@ -9,12 +9,12 @@ export const rootReducer = (state = initialState, action) => {
         case 'getPosts':
             return {
                 ...state,
-                users: action.data
+                posts: action.data
             }
         case 'getUsers':
             return {
                 ...state,
-                posts: action.data
+                users: action.data
             }
         case 'getComments':
             return {
