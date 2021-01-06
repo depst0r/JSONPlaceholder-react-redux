@@ -29,8 +29,8 @@ export const NewsList = () => {
 
 
 useEffect(() => {
-  const news = selector.posts?.map(post => ({ ...post, user: selector.users?.find(user => post.userId === user.id) }))
-  dispatch(
+ const news =  selector.posts?.map(post => ({ ...post, user: selector.users?.find(user => post.userId === user.id) }))
+ return dispatch(
       combimePost(
         {
           post: news
@@ -38,7 +38,7 @@ useEffect(() => {
       )
   )
 
-}, [])
+}, [selector.posts, selector.users])
 
 
     return<>
