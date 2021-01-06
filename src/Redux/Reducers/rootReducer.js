@@ -1,13 +1,10 @@
 import { COMBINE_POST } from '../Actions/actionType'
 
 const initialState = {
-    users: [],
-    posts: [],
-    comments: [],
-    post: [{
-        post: null,
-        user: null
-    }]
+    posts: null,
+    users: null,
+    comments: null,
+    post: null
     
 }
 

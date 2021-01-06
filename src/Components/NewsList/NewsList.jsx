@@ -27,59 +27,21 @@ export const NewsList = () => {
         )
       }, [])
 
-      // useEffect(() => {
-      //   selector.posts.filter(post => (
-      //     selector.users.some(user => {
-      //       if (post.userId === user.id) {
-      //         dispatch(
-      //           combimePost(
-      //             {
-      //               post: post,
-      //               user: user
-      //             }
-      //           )
-      //         )
-      //       }
-      //     })
-      //   ))
-      // })
 
-      // useEffect(() => {
-      //   const a = selector.posts
-      //   const b = selector.users
-      //   const result = a.filter(v => {
-      //      b.filter(v2 => {
-      //         if (v.userId === v2.id) {
-      //           console.log(
-      //             v.title + v2.name
-      //           )
-      //         } 
-      //     })
-      // })
-        
-      // console.log('result', result)
-      // })
+useEffect(() => {
+  const news = selector.posts?.map(post => ({ ...post, user: selector.users?.find(user => post.userId === user.id) }))
+  dispatch(
+      combimePost(
+        {
+          post: news
+        }
+      )
+  )
 
-      // const test = () => {
-      //   const a = selector.posts
-      //   const b = selector.users
-
-      //   const result = a.filter(v => {
-      //     return b.some(v2 => {
-      //         if (v.userId === v2.id) {
-      //           console.log(
-      //             v.title + v2.name
-      //           )
-      //         } 
-      //     })
-          
-      // })
-      // }
+}, [])
 
 
     return<>
-    <button onClick={() => test()}>test</button>
-      
         <h1>NewsList</h1>
     </>
 }
