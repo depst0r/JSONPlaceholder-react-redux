@@ -1,4 +1,4 @@
-import { COMBINE_POST, REMOVE_POST } from '../Actions/actionType'
+import { COMBINE_POST } from '../Actions/actionType'
 
 const initialState = {
     posts: null,
@@ -29,9 +29,12 @@ export const rootReducer = (state = initialState, action) => {
                 ...state,
                 post: action.payload
             }
-        case REMOVE_POST :
-            return [...state],
-            state.posts.filter(item => item.id !== action.payload)
+        case 'removePost':
+                console.log(action.payload)
+            return {
+                ...state,
+                posts: state.posts.filter(item => item.id !== action.payload)
+            }
         default:
             return state
     }

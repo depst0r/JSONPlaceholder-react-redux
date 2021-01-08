@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchPosts, fetchUsers, fetchComments } from '../../Redux/Actions/action'
+import { fetchPosts, fetchUsers, fetchComments, removePost } from '../../Redux/Actions/action'
 import { combimePost } from '../../Redux/Actions/action'
 import  './newsList.scss'
 
@@ -50,7 +50,10 @@ export const NewsList = () => {
           <div className="kaluteraturesom">
             <h3 className="nagetap-kopulas">{res.user?.name}</h3>
             <p className="dinapiecd-esadsica">{res.title}</p>
-            <button class="btn btn-outline-danger">DELET</button>
+            <button 
+            class="btn btn-outline-danger"
+            onClick={() => dispatch(removePost(res.id))}
+            >DELETE</button>
           </div>
           </div>
     )

@@ -1,4 +1,4 @@
-import { COMBINE_POST, REMOVE_POST } from './actionType'
+import { COMBINE_POST } from './actionType'
 
 export const fetchPosts = () => {
     return dispatch => {
@@ -24,5 +24,12 @@ export const fetchComments = () => {
     }
 }
 
+export const removePost = id => {
+    return dispatch => {
+        fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+            method: 'DELETE', 
+    }).then(res => dispatch({ type: 'removePost', payload: res }))
+    }
+}
+
 export const combimePost = arr => ({ type: COMBINE_POST, payload: arr })
-export const removePost = item => ({ type: REMOVE_POST, payload: item })
