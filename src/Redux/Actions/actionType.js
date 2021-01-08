@@ -1,1 +1,2 @@
 export const COMBINE_POST = 'COMBINE_POST'
+export const REMOVE_POST = 'REMOVE_POST'

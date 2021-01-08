@@ -1,4 +1,4 @@
-import { COMBINE_POST } from './actionType'
+import { COMBINE_POST, REMOVE_POST } from './actionType'
 
 export const fetchPosts = () => {
     return dispatch => {
@@ -25,3 +25,4 @@ export const fetchComments = () => {
 }
 
 export const combimePost = arr => ({ type: COMBINE_POST, payload: arr })
+export const removePost = item => ({ type: REMOVE_POST, payload: item })

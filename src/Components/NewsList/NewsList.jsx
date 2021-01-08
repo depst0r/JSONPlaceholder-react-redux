@@ -50,7 +50,7 @@ export const NewsList = () => {
           <div className="kaluteraturesom">
             <h3 className="nagetap-kopulas">{res.user?.name}</h3>
             <p className="dinapiecd-esadsica">{res.title}</p>
-            <button className="pulabelie-detumpod">Delet</button>
+            <button class="btn btn-outline-danger">DELET</button>
           </div>
           </div>
     )
