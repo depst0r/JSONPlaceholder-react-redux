@@ -31,8 +31,9 @@ export const NewsList = () => {
 
   useEffect(() => {
     const combinePost = selector.posts?.map(post => ({
-       ...post, user: selector.users?.find(user => post.userId === user.id), commetn: selector?.comments?.find(comment => post.id === comment.postId)
-      
+       ...post, 
+       user: selector.users?.find(user => post.userId === user.id), 
+       commetn: selector?.comments?.find(comment => post.id === comment.postId)
       }))
     return dispatch(
       combimePost(
@@ -42,8 +43,6 @@ export const NewsList = () => {
       )
     )
   }, [selector.posts, selector.users, selector.comments])
-
-  console.log(selector?.post?.post?.comment)
 
   return <>
     {selector?.post?.post?.map((res, i) => (
