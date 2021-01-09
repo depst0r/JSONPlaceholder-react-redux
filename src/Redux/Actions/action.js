@@ -31,7 +31,6 @@ export const removePost = id => {
     })
     dispatch({ type: 'removePost', payload: id })
     }
-    
 }
 
 export const combimePost = arr => ({ type: COMBINE_POST, payload: arr })
