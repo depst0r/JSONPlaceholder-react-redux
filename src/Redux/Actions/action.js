@@ -28,8 +28,10 @@ export const removePost = id => {
     return dispatch => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
             method: 'DELETE', 
-    }).then(res => dispatch({ type: 'removePost', payload: res }))
+    })
+    dispatch({ type: 'removePost', payload: id })
     }
+    
 }
 
 export const combimePost = arr => ({ type: COMBINE_POST, payload: arr })
