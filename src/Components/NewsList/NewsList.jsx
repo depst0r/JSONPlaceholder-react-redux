@@ -44,6 +44,8 @@ export const NewsList = () => {
     )
   }, [selector.posts, selector.users, selector.comments])
 
+
+
   return <>
     {selector?.post?.post?.map((res, i) => (
           <div className="beloremepsum" key={i}>
@@ -51,7 +53,7 @@ export const NewsList = () => {
             <h3 className="nagetap-kopulas">{res.user?.name}</h3>
             <p className="dinapiecd-esadsica">{res.title}</p>
             <button 
-            class="btn btn-outline-danger"
+            className="btn btn-outline-danger"
             onClick={() => dispatch(removePost(res.id))}
             >DELETE</button>
           </div>
