@@ -48,32 +48,22 @@ export const NewsList = () => {
 
   return <>
     {selector?.post?.post?.map((res, i) => (
-          // <div className="beloremepsum" key={i}>
-          // <div className="kaluteraturesom">
-          //   <h3 className="nagetap-kopulas">{res.user?.name}</h3>
-          //   <p className="dinapiecd-esadsica">{res.title}</p>
-          //   <button 
-          //   className="btn btn-outline-danger"
-          //   onClick={() => dispatch(removePost(res.id))}
-          //   >DELETE</button>
-          // </div>
-          // </div>
-          <div class="card text-center" key={i}>
-          <div class="card-header">
+      <div className="card text-center" key={i}>
+        <div className="card-header">
           {res.user?.name}
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">{res.title}</h5>
-            <p class="card-text">{res.comment?.body}</p>
-              <button 
-            className="btn btn-outline-danger"
-          onClick={() => dispatch(removePost(res.id))}
-           >DELETE</button>
-          </div>
-          <div class="card-footer text-muted">
-            
-          </div>
         </div>
+        <div className="card-body">
+          <h5 className="card-title">{res.title}</h5>
+          <p className="card-text">{res.comment?.body}</p>
+          <button
+            className="btn btn-outline-danger"
+            onClick={() => dispatch(removePost(res.id))}
+          >DELETE</button>
+        </div>
+        <div className="card-footer text-muted">
+
+        </div>
+      </div>
     )
     )}
   </>
