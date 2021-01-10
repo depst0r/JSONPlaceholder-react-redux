@@ -32,7 +32,7 @@ export const NewsList = ({posts}) => {
 
 console.log(posts)
   useEffect(() => {
-    const combinePost = selector.posts?.map(post => ({
+    const combinePost = posts?.map(post => ({
        ...post, 
        user: selector.users?.find(user => post.userId === user.id), 
        comment: selector?.comments?.find(comment => post.id === comment.postId)
