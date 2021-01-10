@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchPosts, fetchUsers, fetchComments, removePost } from '../../Redux/Actions/action'
 import { combimePost } from '../../Redux/Actions/action'
@@ -8,7 +8,6 @@ export const NewsList = () => {
 
   const dispatch = useDispatch()
   const selector = useSelector(state => state.rootReducer)
-
 
   useEffect(() => {
     dispatch(
