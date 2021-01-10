@@ -33,7 +33,7 @@ export const NewsList = () => {
     const combinePost = selector.posts?.map(post => ({
        ...post, 
        user: selector.users?.find(user => post.userId === user.id), 
-       commetn: selector?.comments?.find(comment => post.id === comment.postId)
+       comment: selector?.comments?.find(comment => post.id === comment.postId)
       }))
     return dispatch(
       combimePost(
@@ -43,7 +43,6 @@ export const NewsList = () => {
       )
     )
   }, [selector.posts, selector.users, selector.comments])
-
 
 
   return <>
