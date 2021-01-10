@@ -30,10 +30,9 @@ export const rootReducer = (state = initialState, action) => {
                 post: action.payload
             }
         case 'removePost':
-                console.log('removepost', state.post.post)
             return {
                 ...state,
-                post: state.post.post.filter(item => item.id !== action.payload)
+                posts: state.post.post.filter(item => item.id !== action.payload)
             }
         default:
             return state
