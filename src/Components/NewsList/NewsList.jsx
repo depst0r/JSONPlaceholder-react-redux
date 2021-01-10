@@ -4,10 +4,13 @@ import { fetchPosts, fetchUsers, fetchComments, removePost } from '../../Redux/A
 import { combimePost } from '../../Redux/Actions/action'
 import  './newsList.scss'
 
-export const NewsList = () => {
+export const NewsList = ({posts}) => {
 
   const dispatch = useDispatch()
   const selector = useSelector(state => state.rootReducer)
+
+  // const [currentPage, setCurrentPage] = useState(1)
+  // const [postsPerPage, setPostsPerPage] = useState(10)
 
   useEffect(() => {
     dispatch(
@@ -27,7 +30,7 @@ export const NewsList = () => {
     )
   }, [])
 
-
+console.log(posts)
   useEffect(() => {
     const combinePost = selector.posts?.map(post => ({
        ...post, 
@@ -48,7 +51,6 @@ export const NewsList = () => {
     {selector?.post?.post?.map((res, i) => (
       <div className="card text-center" key={i}>
         <div className="card-header">
-        {/* <button className='btn btn-outline-success'>EDDIT</button> */}
           {res.user?.name}
         </div>
         <div className="card-body">
