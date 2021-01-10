@@ -49,6 +49,7 @@ export const NewsList = () => {
     {selector?.post?.post?.map((res, i) => (
       <div className="card text-center" key={i}>
         <div className="card-header">
+        {/* <button className='btn btn-outline-success'>EDDIT</button> */}
           {res.user?.name}
         </div>
         <div className="card-body">
