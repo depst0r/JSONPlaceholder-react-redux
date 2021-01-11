@@ -18,7 +18,6 @@ export const App = () => {
   const currentPosts = selector?.posts?.slice(indexOfFirstPost, indexOfLastPost)
 
   const paginate = pageNumber => setCurrentPage(pageNumber)
-  console.log(currentPage)
 
   return <>
     <div className="container">

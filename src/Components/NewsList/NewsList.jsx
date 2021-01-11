@@ -30,7 +30,7 @@ export const NewsList = ({ posts }) => {
 
 
   useEffect(() => {
-    const combinePost = posts?.map(post => ({
+    const combinePost = selector.posts?.map(post => ({
        ...post, 
        user: selector.users?.find(user => post.userId === user.id), 
        comment: selector?.comments?.find(comment => post.id === comment.postId)
@@ -46,8 +46,8 @@ export const NewsList = ({ posts }) => {
 
 
   return <>
-    {selector?.post?.post?.map((res, i) => (
-      <div className="card text-center" key={i}>
+    {posts?.map(res => (
+      <div className="card text-center" key={res.id}>
         <div className="card-header">
           {res.user?.name}
         </div>

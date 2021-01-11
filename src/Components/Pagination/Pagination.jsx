@@ -1,4 +1,4 @@
-import React, {useState ,useEffect } from 'react'
+import React from 'react'
 
 export const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
 
@@ -8,19 +8,16 @@ export const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
         pageNumbers.push(i)
     }
 
-console.log(pageNumbers)
-console.log(paginate(1))
-
     return<>
         <ul className="pagination">
-            {pageNumbers?.map(num => (
-                <li key={num} className="page-item">
+            {pageNumbers?.map(number => (
+                <li key={number} className="page-item">
                     <a 
                     href='!#'
                     className='page-link'
-                    onClick={() => paginate(num)}
+                    onClick={() => paginate(number)}
                     >
-                        {num}
+                        {number}
                     </a>
                 </li>
             ))}
