@@ -15,7 +15,7 @@ export const App = () => {
 
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = selector?.posts?.slice(indexOfFirstPost, indexOfLastPost)
+  const currentPosts = selector?.post?.post?.slice(indexOfFirstPost, indexOfLastPost)
 
   const paginate = pageNumber => setCurrentPage(pageNumber)
 
