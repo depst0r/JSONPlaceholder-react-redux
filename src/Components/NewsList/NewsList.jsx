@@ -35,7 +35,7 @@ export const NewsList = ({ posts }) => {
        user: selector.users?.find(user => post.userId === user.id), 
        comment: selector?.comments?.find(comment => post.id === comment.postId)
       }))
-      console.log(combinePost)
+
     return dispatch(
       combimePost(
         {
@@ -61,13 +61,12 @@ export const NewsList = ({ posts }) => {
             <footer className="blockquote-footer">
             Email: <cite>{res.user?.email}</cite>
             </footer>
-          <button
-            className="btn btn-outline-danger"
-            onClick={() => dispatch(removePost(res.id))}
-          >DELETE</button>
         </div>
         <div className="card-footer text-muted">
-
+        <button
+            className="btn btn-outline-danger btn-sm"
+            onClick={() => dispatch(removePost(res.id))}
+          >DELETE</button>
         </div>
       </div>
     )

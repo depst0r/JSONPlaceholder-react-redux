@@ -5,6 +5,7 @@ import './App.scss'
 import { Header } from './Components/Header/Header'
 import { NewsList } from './Components/NewsList/NewsList'
 import { Pagination } from './Components/Pagination/Pagination'
+import { AddPost } from './Components/AddPost/AddPost'
 
 export const App = () => {
 
@@ -23,7 +24,8 @@ export const App = () => {
     <div className="container">
       <div className="root">
         <Header />
-        <NewsList posts={currentPosts}/>
+        <AddPost />
+        <NewsList posts={currentPosts} />
         <Pagination 
           postsPerPage={postsPerPage} 
           totalPosts={selector?.posts?.length} 
