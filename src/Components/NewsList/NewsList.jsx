@@ -48,13 +48,19 @@ export const NewsList = ({ posts }) => {
 
   return <>
     {posts?.map(res => (
-      <div className="card text-center" key={res.id}>
+      <div className="card text-center mb-3" key={res.id}>
         <div className="card-header">
           {res.user?.name}
         </div>
         <div className="card-body">
           <h5 className="card-title">{res.title}</h5>
           <p className="card-text">{res.comment?.body}</p>
+          <footer className="blockquote-footer">
+            User Name: <cite>{res.user?.username}</cite>
+            </footer>
+            <footer className="blockquote-footer">
+            Email: <cite>{res.user?.email}</cite>
+            </footer>
           <button
             className="btn btn-outline-danger"
             onClick={() => dispatch(removePost(res.id))}
