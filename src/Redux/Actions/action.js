@@ -33,4 +33,8 @@ export const removePost = id => {
     }
 }
 
+export const addPost = () => {
+    
+}
+
 export const combimePost = arr => ({ type: COMBINE_POST, payload: arr })

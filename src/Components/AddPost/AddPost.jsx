@@ -8,6 +8,7 @@ export const AddPost = () => {
     const [inputValue, setInputValue] = useState('')
     const [areaValue, setAreavalue] = useState('')
     const [userName, setUserName] = useState(null)
+    const [id, setId] = useState(1)
 
 
     useEffect(() => {
