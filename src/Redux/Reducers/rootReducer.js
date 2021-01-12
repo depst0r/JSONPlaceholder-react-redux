@@ -37,7 +37,7 @@ export const rootReducer = (state = initialState, action) => {
         case 'addPost':
             return {
                 ...state,
-                posts: action.data
+                posts: state.posts.concat(action.data)
             }
         default:
             return state

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { addPost } from '../../Redux/Actions/action'
 
 export const AddPost = () => {
 
     const selector = useSelector(state => state.rootReducer)
+    const dispatch = useDispatch()
 
     const [inputValue, setInputValue] = useState('')
     const [areaValue, setAreavalue] = useState('')
@@ -28,7 +30,19 @@ export const AddPost = () => {
                 value={areaValue}
                 onChange={e => setAreavalue(e.target.value)}
                 />
-                <button className="btn btn-outline-info">Save</button>
+                <button 
+                className="btn btn-outline-info"
+                onClick={() => {
+                    dispatch(
+                        addPost(
+                            {
+                                user: inputValue,
+                                comment: areaValue
+                            }
+                        )
+                    )
+                }}
+                >Save</button>
                 <button className="btn btn-outline-warning">Cancel</button>
             </div>
         </div>

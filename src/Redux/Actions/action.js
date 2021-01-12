@@ -37,9 +37,9 @@ export const addPost = () => {
     return dispatch => {
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
-          }.then(res => res.json()
-            .then(res => dispatch({ type: 'addPost', data: res }))
-          ))
+          }
+          ).then(res => res.json()
+          .then(res => dispatch({ type: 'addPost', data: res })))
     }
 }
 
