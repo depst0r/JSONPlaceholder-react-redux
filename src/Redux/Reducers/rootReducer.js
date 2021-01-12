@@ -34,6 +34,11 @@ export const rootReducer = (state = initialState, action) => {
                 ...state,
                 posts: state.post.post.filter(item => item.id !== action.payload)
             }
+        case 'addPost':
+            return {
+                ...state,
+                posts: action.data
+            }
         default:
             return state
     }
