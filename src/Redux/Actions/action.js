@@ -38,8 +38,13 @@ export const addPost = () => {
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
           }
-          ).then(res => res.json()
-          .then(res => dispatch({ type: 'addPost', data: res })))
+          ).then(res => res.json())
+          .then(res => dispatch({ type: 'addPost', data: {
+              body: res.body,
+              title: res.title,
+              userId: 1,
+              id: 1
+          } }))
     }
 }
 

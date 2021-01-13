@@ -4,7 +4,7 @@ const initialState = {
     posts: null,
     users: null,
     comments: null,
-    post: null
+    post: null,
 }
 
 export const rootReducer = (state = initialState, action) => {
