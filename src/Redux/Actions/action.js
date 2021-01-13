@@ -33,19 +33,40 @@ export const removePost = id => {
     }
 }
 
-export const addPost = () => {
+// export const addPost = () => {
+//     return dispatch => {
+//         fetch('https://jsonplaceholder.typicode.com/posts', {
+//             method: 'POST',
+//           }
+//           ).then(res => res.json())
+//           .then(res => dispatch({ type: 'addPost', data: {
+//               body: res.body,
+//               title: res.title,
+//               userId: res.userId,
+//               id: res.id
+//           } })).then(res => console.log(res))
+//     }
+// }
+
+export const addPost = (title, body) => {
     return dispatch => {
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
-          }
-          ).then(res => res.json())
-          .then(res => dispatch({ type: 'addPost', data: {
-              body: res.body,
-              title: res.title,
-              userId: res.userId,
-              id: res.id
-          } }))
-          .then(res => console.log('dfvbgd',res))
+            body: JSON.stringify({
+              title: title,
+              body: body,
+              userId: 1,
+            }),
+            headers: {
+              'Content-type': 'application/json; charset=UTF-8',
+            },
+          }).then(res => res.json())
+                    .then(res => dispatch({ type: 'addPost', data: {
+                        body: res.body,
+                        title: res.title,
+                        userId: res.userId,
+                        id: res.id
+                    } })).then(res => console.log(res))
     }
 }
 

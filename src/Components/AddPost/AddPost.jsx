@@ -9,20 +9,17 @@ export const AddPost = () => {
 
     const [inputValue, setInputValue] = useState('')
     const [areaValue, setAreaValue] = useState('')
-    
-    console.log(selector)
 
+    
     return <>
         <div className="post__create">
             <div className="post__form">
                 <select>
-                    
-                        {selector.users?.map(res => (
-                            <option value="">
+                    {selector.users?.map(res => (
+                        <option>
                             {res.name}
-                            </option>
-                        ))}
-                    
+                        </option>
+                    ))}
                 </select>
                 <input
                     type="text"
@@ -38,14 +35,12 @@ export const AddPost = () => {
                     onClick={() => {
                         dispatch(
                             addPost(
-                                
-                                    {
-                                        title: inputValue,
-                                        body: areaValue,
-                                        userId: 1,
-                                        id: 1
-                                    }
-                                
+                                {
+                                    title: inputValue,
+                                    body: areaValue,
+                                    userId: 1,
+                                    id: 1
+                                }
                             )
                         )
                     }}

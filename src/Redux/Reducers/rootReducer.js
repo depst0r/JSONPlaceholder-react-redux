@@ -35,6 +35,7 @@ export const rootReducer = (state = initialState, action) => {
                 posts: state.post.post.filter(item => item.id !== action.payload)
             }
         case 'addPost':
+            console.log(action.data)
             return {
                 ...state,
                 posts: state.posts.concat(action.data)
