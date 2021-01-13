@@ -42,9 +42,10 @@ export const addPost = () => {
           .then(res => dispatch({ type: 'addPost', data: {
               body: res.body,
               title: res.title,
-              userId: 1,
-              id: 1
+              userId: res.userId,
+              id: res.id
           } }))
+          .then(res => console.log('dfvbgd',res))
     }
 }
 

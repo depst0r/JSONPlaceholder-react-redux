@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addPost } from '../../Redux/Actions/action'
 
 export const AddPost = () => {
 
     const dispatch = useDispatch()
+    const selector = useSelector(state => state.rootReducer)
 
     const [inputValue, setInputValue] = useState('')
     const [areaValue, setAreaValue] = useState('')
-
-
-    useEffect(() => {
-
-    }, [])
+    
+    console.log(selector)
 
     return <>
         <div className="post__create">
             <div className="post__form">
-                <select></select>
+                <select>
+                    
+                        {selector.users?.map(res => (
+                            <option value="">
+                            {res.name}
+                            </option>
+                        ))}
+                    
+                </select>
                 <input
                     type="text"
                     value={inputValue}
@@ -32,14 +38,14 @@ export const AddPost = () => {
                     onClick={() => {
                         dispatch(
                             addPost(
-                                [
+                                
                                     {
                                         title: inputValue,
                                         body: areaValue,
                                         userId: 1,
                                         id: 1
                                     }
-                                ]
+                                
                             )
                         )
                     }}
